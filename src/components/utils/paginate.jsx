@@ -1,6 +1,6 @@
-export default function paginate(allMovies, pageSize, currentPage) {
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIdex = currentPage * pageSize;
+import _ from "lodash";
 
-  return allMovies.slice(startIndex, endIdex);
+export function paginate(items, pageNumber, pageSize) {
+  const startIndex = (pageNumber - 1) * pageSize;
+  return _(items).slice(startIndex).take(pageSize).value();
 }
