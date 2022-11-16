@@ -10,7 +10,6 @@ import NotFound from "./components/notFound";
 import MovieForm from "./components/movieForm";
 import LoginForm from "./components/loginForm";
 import Register from "./components/register";
-import NewMovie from "./components/newMovie";
 
 function App() {
   return (
