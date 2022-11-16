@@ -40,7 +40,7 @@ class MovieForm extends Form {
     if (movieId === "new") return;
 
     const movie = getMovie(movieId);
-    // if (!movie) return window.location.replace("/not-found");
+    if (!movie) return window.location.href("/not-found");
 
     this.setState({ data: this.mapToViewModel(movie) });
   }

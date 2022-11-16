@@ -20,7 +20,7 @@ function App() {
       <main className="container content">
         <Routes>
           <Route path="/" element={<Navigate to="/movies" />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
 
           <Route path="/movies/:id" element={<MovieForm />} />
           <Route path="/movies" element={<Movies />} />
