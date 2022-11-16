@@ -36,14 +36,14 @@ class MovieForm extends Form {
     const genres = getGenres();
     this.setState({ genres });
 
-    const movieId = `${window.location.href}`.slice(-24);
-    console.log(movieId);
-    console.log(window.location.href);
+    const movieId = `${window.location.href}`.slice(
+      window.location.href.indexOf("s/") + 2
+    );
 
     if (movieId === "new") return;
 
     const movie = getMovie(movieId);
-    if (!movie) return window.location.href("/not-found");
+    if (!movie) return window.location.replace("/not-found");
 
     this.setState({ data: this.mapToViewModel(movie) });
   }
