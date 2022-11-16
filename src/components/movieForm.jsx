@@ -37,6 +37,9 @@ class MovieForm extends Form {
     this.setState({ genres });
 
     const movieId = `${window.location.href}`.slice(29);
+    console.log(movieId);
+    console.log(window.location.href);
+
     if (movieId === "new") return;
 
     const movie = getMovie(movieId);
