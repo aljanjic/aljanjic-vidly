@@ -74,7 +74,7 @@ class Movies extends Component {
       pageSize,
       currentPage,
       sortOrder,
-      selectedGenre,
+      currentGenre,
       searchQuery,
       movies: allMovies,
     } = this.state;
@@ -84,8 +84,8 @@ class Movies extends Component {
       filtered = allMovies.filter((m) =>
         m.title.toLowerCase().startsWith(searchQuery.toLowerCase())
       );
-    else if (selectedGenre && selectedGenre._id)
-      filtered = allMovies.filter((m) => m.genre._id === selectedGenre._id);
+    else if (currentGenre && currentGenre._id)
+      filtered = allMovies.filter((m) => m.genre._id === currentGenre._id);
 
     const sorted = _.orderBy(filtered, [sortOrder.path], [sortOrder.orderBy]);
 
